@@ -54,6 +54,7 @@ $pagetitle="Personal Info";
             
             ?>
         </table>
+        <a href="edit.php?id=<?php echo $rows['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
     </section>
 <?php
 $content = ob_get_clean();

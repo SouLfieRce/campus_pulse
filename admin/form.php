@@ -60,7 +60,7 @@ $pagetitle = "Add User";
             </div>
             <div class="form-group">
                 <label for="password">Year of Study</label>
-                <input type="date" class="form-control form-control-sm" name="yos" placeholder="Enter password">
+                <input type="number" class="form-control form-control-sm" name="yos" placeholder="Enter password">
             </div>
             <br>
 

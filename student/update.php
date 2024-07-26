@@ -1,29 +1,26 @@
 <?php
 session_start();
-require 'vendor/autoload.php';
-
-require 'config/db.php';
+require '../config/db.php';
 
 
-if(!isset($_SESSION['email']))
-{
+if (!isset($_SESSION['email'])) {
     header('location:login.php');
 }
 
-if (isset($_GET['update'])) {
+if (isset($_POST['update'])) {
+    $id = $_POST['id'];
+    $f_name = $_POST['f_name'];
+    $m_name = $_POST['m_name'];
+    $l_name = $_POST['l_name'];
+    $email = $_POST['email'];
+    $dob = $_POST['dob'];
+    $gender = $_POST['gender'];
+    $address = $_POST['address'];
+    $mobile_number = $_POST['mobile_number'];
 
-    $id = $_GET['id'];
-    $f_name1 = $_GET['f_name'];
-    $l_name1 = $_GET['l_name'];
-    $email1 = $_GET['email'];
-    $gender1 = $_GET['gender'];
-    $mobile_number1 = $_GET['mobile_number'];
-
-    
-
-    $qry = "Update users set f_name='$f_name1', l_name = '$l_name1', email = '$email1', gender = '$gender1', mobile_number = $mobile_number1 where id=$id;";
+    $qry = "Update users set f_name='$f_name', m_name='$m_name', l_name = '$l_name', email = '$email', date_of_birth='$dob', gender = '$gender', address='$address', mobile_number = $mobile_number where id=$id;";
 
     if (mysqli_query($con, $qry)) {
-        header("location:user.php");
+        header("location:personal_info.php");
     }
 }

@@ -18,6 +18,14 @@ if (!isset($_SESSION['email'])) {
           <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
           Users
         </a>
+        
+        <?php } ?>
+        <?php if($_SESSION['role_id'] > 1)
+        { ?>
+        <a class="nav-link" href="attendance.php">
+          <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+          Attendance
+        </a>
         <?php } ?>
         <?php if($_SESSION['role_id'] == 1)
         { ?>

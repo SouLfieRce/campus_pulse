@@ -71,7 +71,7 @@ $user = mysqli_fetch_assoc($result);
         </div>
         <div class="form-group">
             <label for="password">Year of Study</label>
-            <input type="date" class="form-control form-control-sm" name="yos" value="<?php echo $user['year_of_study']; ?>">
+            <input type="number" class="form-control form-control-sm" name="yos" value="<?php echo $user['year_of_study']; ?>">
         </div>
         <br>
         <input type="hidden" name="id" value="<?php echo $id; ?>">
