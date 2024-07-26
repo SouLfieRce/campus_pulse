@@ -20,9 +20,12 @@ $pagetitle="Users";
                 <th>M_Name</th>
                 <th>L_Name</th>
                 <th>Email</th>
+                <th>Role ID</th>
                 <th>Date of Birth</th>
                 <th>Gender</th>
+                <th>Address</th>
                 <th>Mobile Number</th>
+                <th>Year of Study</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -36,10 +39,12 @@ $pagetitle="Users";
                     <td><?php echo $rows['m_name']; ?></td>
                     <td><?php echo $rows['l_name']; ?></td>
                     <td><?php echo $rows['email']; ?></td>
+                    <td><?php echo $rows['role_id']; ?></td>
                     <td><?php echo $rows['date_of_birth']; ?></td>
-                    <!-- <td><?php echo $rows['password']; ?></td> -->
+                    <td><?php echo $rows['address']; ?></td>
                     <td><?php echo $rows['gender']; ?></td>
                     <td><?php echo $rows['mobile_number']; ?></td>
+                    <td><?php echo $rows['year_of_study']; ?></td>
 
                     <td>
                         <a href="edit.php?id=<?php echo $rows['id']; ?>" class="btn btn-sm btn-primary">Edit</a>

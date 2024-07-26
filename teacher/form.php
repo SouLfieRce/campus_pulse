@@ -1,7 +1,6 @@
 <?php
 
-require_once 'vendor/autoload.php';
-require 'config/db.php';
+require '../config/db.php';
 ob_start();
 $pagetitle = "Add User";
 ?>
@@ -32,8 +31,6 @@ $pagetitle = "Add User";
                 <label for="exampleFormControlSelect1">Role:</label>
                 <select class="form-control" name="role">
                     <option>Student</option>
-                    <option>Teacher</option>
-                    <option>Admin</option>
                 </select>
             </div>
             <div class="form-group">
@@ -71,5 +68,5 @@ $pagetitle = "Add User";
 </div>
 <?php
 $content = ob_get_clean();
-include_once __DIR__ . '/layout/app_layout.php';
+include_once __DIR__ . '/../layout/app_layout.php';
 ?>
