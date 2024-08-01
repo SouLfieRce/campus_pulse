@@ -40,9 +40,11 @@ $pagetitle = "Dashboard";
                                 $sql = "SELECT distinct date FROM attendance";
                                 $run = mysqli_query($con, $sql);
                                 $totaldays = mysqli_num_rows($run);
-                                $attendance = $presentdays/$totaldays*100;
-                                echo number_format((float)$attendance, 2)."%";
-
+                                if ($totaldays != 0) {
+                                    $attendance = $presentdays / $totaldays * 100;
+                                    echo number_format((float)$attendance, 2) . "%";
+                                }else
+                                echo "No attendance";
                                 ?>
                             </div>
                         </div>
