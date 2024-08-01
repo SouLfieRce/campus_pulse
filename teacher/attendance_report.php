@@ -13,7 +13,9 @@ if (isset($_POST['submit'])) {
         foreach ($data as $student_id =>$status) {
             $qry = "INSERT INTO attendance values('','$student_id','$date','$status');";
             $result = mysqli_query($con, $qry);
-            
+
         }
-    
+        if($result){
+            header("location:attendance.php");
+        }
 }

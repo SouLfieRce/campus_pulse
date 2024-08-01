@@ -26,11 +26,24 @@ $pagetitle = "Dashboard";
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card border-top-0 border-end-0 border-bottom-0 border-primary border-2 text-center mb-4 shadow py-4">
+                <div class="card border-top-0 border-end-0 border-bottom-0 border-primary border-2 text-center mb-4 shadow py-4 bg-warning">
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-12">
-                                Active Users:
+                                Total Attendance:
+                                <?php
+                                session_start();
+                                $id = $_SESSION['id'];
+                                $sql = "SELECT * FROM attendance where user_id=$id and status='Present';";
+                                $run = mysqli_query($con, $sql);
+                                $presentdays = mysqli_num_rows($run);
+                                $sql = "SELECT distinct date FROM attendance";
+                                $run = mysqli_query($con, $sql);
+                                $totaldays = mysqli_num_rows($run);
+                                $attendance = $presentdays/$totaldays*100;
+                                echo number_format((float)$attendance, 2)."%";
+
+                                ?>
                             </div>
                         </div>
                     </div>
