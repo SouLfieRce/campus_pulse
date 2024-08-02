@@ -10,11 +10,12 @@ if (!isset($_SESSION['email'])) {
 if (isset($_POST['update'])) {
     $id = $_POST['id'];
     $name = $_POST['name'];
-    $id1 = $_POST['id1'];
+    $dep_id = $_POST['dep_id'];
 
-    $qry = "Update departments set id=$id, name='$name' where id=$id1;";
+
+    $qry = "Update classes set name='$name' where id=$id;";
 
     if (mysqli_query($con, $qry)) {
-        header("location:department.php");
+        header("location:classes.php?id=$dep_id");
     }
 }

@@ -3,23 +3,19 @@
 require_once '../vendor/autoload.php';
 require '../config/db.php';
 ob_start();
-$pagetitle = "Add User";
+$pagetitle = "Add Class";
+$id = $_GET['id'];
 ?>
 <div class="container-fluid">
     <div class="row">
-        <form action="insert_dep.php" method="post">
+        <form action="insert_class.php" method="post">
             <div class="form-group">
-                <label for="f_name">ID:</label>
-                <input type="number" class="form-control form-control-sm" name="id" placeholder="Enter id">
-            </div>
-            <div class="form-group">
-                <label for="f_name">First Name:</label>
-                <input type="text" class="form-control form-control-sm" name="name" placeholder="Enter Department Name">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control form-control-sm" name="name" placeholder="Enter Class Name">
             </div>
             <br>
-
+            <input type="hidden" name="dep_id" value="<?php echo $id ?>">
             <input type="submit" name="submit" class="btn btn-primary">
-
         </form>
     </div>
 </div>

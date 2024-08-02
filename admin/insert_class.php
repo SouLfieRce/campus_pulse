@@ -4,14 +4,14 @@ require_once '../vendor/autoload.php';
 require '../config/db.php';
 ob_start();
 if (isset($_POST['submit'])) {
-    $id = $_POST['id'];
     $name = $_POST['name'];
-  
+    $dep_id = $_POST['dep_id'];
+    
 
     
-    $qry = "INSERT INTO departments values($id,'$name');";
+    $qry = "INSERT INTO classes values(' ',$dep_id,'$name','');";
     if (mysqli_query($con, $qry)) {
-        header('location:department.php');
+        header("location:classes.php?id=$dep_id");
     }
 }
 

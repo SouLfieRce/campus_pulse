@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
   
 
     
-    $qry = "INSERT INTO departments values($id,'$name');";
+    $qry = "INSERT INTO departments values('','$name');";
     if (mysqli_query($con, $qry)) {
         header('location:department.php');
     }
