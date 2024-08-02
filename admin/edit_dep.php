@@ -13,10 +13,6 @@ $dep = mysqli_fetch_assoc($result);
 
     <form action="update_dep.php" method="post">
         <div class="form-group">
-            <label for="f_name">ID:</label>
-            <input type="number" class="form-control" name="id" value="<?php echo $dep['id']; ?>">
-        </div>
-        <div class="form-group">
             <label for="f_name">Name:</label>
             <input type="text" class="form-control" name="name" value="<?php echo $dep['name']; ?>">
         </div>

@@ -14,7 +14,6 @@ if (isset($_POST['submit'])) {
         header("location:classes.php?id=$dep_id");
     }
 }
-
 $content = ob_get_clean();
 include __DIR__ . 'layout/app_layout.php'
 ?>

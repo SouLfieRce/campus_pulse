@@ -15,7 +15,6 @@ $pagetitle="Users";
     <section>
         <table class="table table-stripped table-borderrer">
             <tr>
-                <th>ID</th>
                 <th>F_Name</th>
                 <th>M_Name</th>
                 <th>L_Name</th>
@@ -34,7 +33,6 @@ $pagetitle="Users";
             while ($rows = $result->fetch_assoc()) {
             ?>
                 <tr>
-                    <td><?php echo $rows['id']; ?></td>
                     <td><?php echo $rows['f_name']; ?></td>
                     <td><?php echo $rows['m_name']; ?></td>
                     <td><?php echo $rows['l_name']; ?></td>

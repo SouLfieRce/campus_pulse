@@ -15,8 +15,8 @@ $pagetitle="Departments";
     <section>
         <table class="table table-stripped table-borderrer">
             <tr>
-                <th>ID</th>
                 <th>Name</th>
+                <th>Status</th>
                 <th>Edit</th>
                 <th>Delete</th>
                 <th>Classes</th>
@@ -26,8 +26,17 @@ $pagetitle="Departments";
             while ($rows = $result->fetch_assoc()) {
             ?>
                 <tr>
-                    <td><?php echo $rows['id']; ?></td>
                     <td><?php echo $rows['name']; ?></td>
+                    <td>
+                        <form action="toggle_status_dep.php" method="post" class="status-toggle-form">
+                            <input type="hidden" name="id" value="<?php echo $rows['id']; ?>">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" name="status" role="switch" id="statusSwitch<?php echo $rows['id']; ?>" <?php echo $rows['status'] == 'Active' ? 'checked' : ''; ?> onchange="this.form.submit()">
+                                <label class="form-check-label" for="statusSwitch<?php echo $rows['id']; ?>"><?php echo $rows['status'] == 'Active' ? 'Active' : 'Inactive'; ?></label>
+                                <input type="hidden" name="dep_id" value="<?php echo $id; ?>">
+                            </div>
+                        </form>
+                    </td>
                     <td>
                         <a href="edit_dep.php?id=<?php echo $rows['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
                     </td>

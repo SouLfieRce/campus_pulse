@@ -20,6 +20,7 @@ $id = $_GET['id'];
                 <th>ID</th>
                 <th>Department_id</th>
                 <th>Class Name</th>
+                <th>Status</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -31,6 +32,16 @@ $id = $_GET['id'];
                     <td><?php echo $rows['id']; ?></td>
                     <td><?php echo $rows['department_id']; ?></td>
                     <td><?php echo $rows['name']; ?></td>
+                    <td>
+                        <form action="toggle_status.php" method="post" class="status-toggle-form">
+                            <input type="hidden" name="id" value="<?php echo $rows['id']; ?>">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" name="status" role="switch" id="statusSwitch<?php echo $rows['id']; ?>" <?php echo $rows['status'] == 'Active' ? 'checked' : ''; ?> onchange="this.form.submit()">
+                                <label class="form-check-label" for="statusSwitch<?php echo $rows['id']; ?>"><?php echo $rows['status'] == 'Active' ? 'Active' : 'Inactive'; ?></label>
+                                <input type="hidden" name="dep_id" value="<?php echo $id; ?>">
+                            </div>
+                        </form>
+                    </td>
 
                     <td>
                         <a href="edit_class.php?id=<?php echo $rows['id']; ?>&dep_id=<?php echo $id; ?>" class="btn btn-sm btn-primary">Edit</a>
